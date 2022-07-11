@@ -32,7 +32,21 @@ describe('Locators', () => {
 
         //Get all elements with specific data test id
         cy.get('[data-cy="btn-id-1"]');
-
         cy.getByTestId('btn-id-1');
+    });
+
+    it('Locates elements with contains', () => {
+        // Get element by text
+        cy.contains('Unique Text');
+
+        // Get element by text
+        cy.contains('Not Unique Text');
+
+        // With selector
+        cy.contains('[type="submit"]', "Not Unique Text");
+        cy.contains("form", "Not Unique Text");
+
+        cy.get('[type="submit"]')
+            .contains('Not Unique Text');
     });
 });
