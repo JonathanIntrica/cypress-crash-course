@@ -32,5 +32,7 @@ describe('Locators', () => {
 
         //Get all elements with specific data test id
         cy.get('[data-cy="btn-id-1"]');
+
+        cy.getByTestId('btn-id-1');
     });
 });
