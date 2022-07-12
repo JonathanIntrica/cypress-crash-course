@@ -13,6 +13,7 @@ describe('Locators', () => {
 
         // Get all elements with specific classes
         cy.get('[class="Elements-btn btn-with-class"]');
+
         cy.get('[class="Elements-btn btn-with-class more-btn-classes"]');
 
         // Get all elements by id
@@ -32,6 +33,7 @@ describe('Locators', () => {
 
         //Get all elements with specific data test id
         cy.get('[data-cy="btn-id-1"]');
+
         cy.getByTestId('btn-id-1');
     });
 
@@ -44,9 +46,18 @@ describe('Locators', () => {
 
         // With selector
         cy.contains('[type="submit"]', "Not Unique Text");
+
         cy.contains("form", "Not Unique Text");
 
         cy.get('[type="submit"]')
             .contains('Not Unique Text');
+    });
+
+    it('Locates elements with find', () => {
+        cy.get('#form-1')
+            .find('.btn-1');
+
+        cy.get('#form-1')
+            .find('.btn-2');
     });
 });
