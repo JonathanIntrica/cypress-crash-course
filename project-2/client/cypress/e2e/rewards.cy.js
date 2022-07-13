@@ -17,6 +17,7 @@ describe('Rewards Dashboard', () => {
             });
     });
 
+
     it('Should display a list of rewards with mock', () => {
         cy.intercept(
             'GET', 'http://localhost:4000/rewards', {
